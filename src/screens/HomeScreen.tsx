@@ -8,7 +8,10 @@ import { RootState } from '../store/store';
 import { setCurrentLocation, setSearchLocation } from '../store/slices/locationSlice';
 import { GOOGLE_PLACES_API_KEY } from '@env';
 import { styled } from 'nativewind';
+import { Image } from "react-native";
 
+
+const customIcon = require("../../assets/casco.png");
 const StyledView = styled(View);
 
 const HomeScreen: React.FC = () => {
@@ -112,14 +115,16 @@ const HomeScreen: React.FC = () => {
         showsMyLocationButton={true}
         showsCompass={true}
       >
+        const customIcon = require("./assets/casco.png");
         {currentLocation && (
           <Marker
             coordinate={{
               latitude: currentLocation.latitude,
               longitude: currentLocation.longitude,
             }}
-            title="Current Location"
+            title="Current Location  aaaaa"
             pinColor="blue"
+            image={customIcon} // Aquí agregas tu ícono personalizado
           />
         )}
         {searchLocation && (
